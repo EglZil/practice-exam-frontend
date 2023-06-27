@@ -3,25 +3,25 @@ import { Link, useParams } from "react-router-dom";
 import {
   Grid,
   Container,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
   Button,
 } from "@mui/material";
 
 export function EmployeeView() {
   const [employee, setEmployee] = useState({});
+  const [rating,setRating] = useState();
   const params = useParams();
 
   useEffect(() => {
-    fetch("api/v1/employees/" + params.id)
+    fetch("api/v1/employees/ratings/" + params.id)
       .then((response) => response.json())
-      .then((data) => setEmployee(data));
+      .then((data) => setRating(data));
   }, []);
+
+  useEffect(() => {
+    fetch("api/v1/employees/" + params.id)
+    .then((response) => response.json())
+    .then((data) => setEmployee(data));
+  }, [])
 
   return (
     <div>
@@ -31,6 +31,9 @@ export function EmployeeView() {
             <h1>
               {employee.name} {employee.surname}
             </h1>
+            <h2>
+              Rating: {rating}
+            </h2>
           </header>
         </Grid>
         <Grid item sm={12}>
