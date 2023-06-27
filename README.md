@@ -10,10 +10,10 @@ To run the project: npm start.
 
 For full functionality backend project part should be running simultaneously. 
 For backend app to run: 
-  clone the repository:  https://github.com/EglZil/practice-exam-backend
-  open the project with prefered IDE. 
-  To build the project run maven command from root directory: mvn clean install. 
-  To run the project: mvn spring-boot:run. 
+  - clone the repository:  https://github.com/EglZil/practice-exam-backend
+  - open the project with prefered IDE. 
+  - To build the project run maven command from root directory: mvn clean install. 
+  - To run the project: mvn spring-boot:run. 
 
 ### Planned improvements
 
