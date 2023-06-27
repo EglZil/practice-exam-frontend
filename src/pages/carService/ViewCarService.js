@@ -35,7 +35,7 @@ export function ViewCarService() {
       <Container>
         <Grid container rowSpacing={4}>
           <header>
-            <h1>{service.title}</h1>
+            <h1>{service.name}</h1>
             <p>{service.address}</p>
           </header>
         </Grid>
