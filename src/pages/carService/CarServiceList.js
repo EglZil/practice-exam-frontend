@@ -14,18 +14,18 @@ import {
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export function CarServiceList(){
-    const [services, setServices] = useState([]);
+export function CarServiceList() {
+  const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetchServices()
+    fetchServices();
   }, []);
 
   const fetchServices = () => {
     fetch("api/v1/services")
       .then((service) => service.json())
       .then(setServices);
-  }
+  };
 
   const handleDelete = (id) => {
     fetch("api/v1/services/" + id, {
@@ -34,7 +34,7 @@ export function CarServiceList(){
         "Content-Type": "applicatioin/json",
       },
     }).then(fetchServices);
-  }
+  };
 
   return (
     <div>
@@ -79,7 +79,12 @@ export function CarServiceList(){
                     </Link>
                   </TableCell>
                   <TableCell>
-                    <Button variant="contained" onClick={() => handleDelete(service.id)}>Delete</Button>
+                    <Button
+                      variant="contained"
+                      onClick={() => handleDelete(service.id)}
+                    >
+                      Delete
+                    </Button>
                   </TableCell>
                 </TableRow>
               ))}
